@@ -5,7 +5,7 @@ image_resource:
   source:
     repository: maven
     tag: latest
-
+    
 inputs:
   - name: branch-master
   - name: mvn-output
@@ -16,6 +16,17 @@ outputs:
 #  path: "mvn"
 #   args: ["-f", "branch-master/AppDemo/pom.xml", "test"]
 
+#run:
+#  path: /bin/bash
+#  args: ["set -e -x mvn -f branch-master/AppDemo/pom.xml test cp branch-master/AppDemo/target/ mvn-output/"]
+
 run:
-  path: /bin/bash
-  args: ["set -e -x mvn -f branch-master/AppDemo/pom.xml test cp branch-master/AppDemo/target/ mvn-output/"]
+  path: sh
+  args:
+  - -eux
+  - |
+    mkdir mvn-output
+    set -e -x mvn -f branch-master/AppDemo/pom.xml test
+    cp branch-master/AppDemo/target/ mvn-output/
+    
+    
