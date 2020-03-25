@@ -11,21 +11,10 @@ inputs:
 outputs:
   - name: mvn-output
   
-##run:
-#  path: "mvn"
-#   args: ["-f", "branch-master/AppDemo/pom.xml", "test"]
+run:
+  path: "mvn"
+  args: ["-f", "branch-master/AppDemo/pom.xml", "test"]
 
 #run:
 #  path: /bin/bash
 #  args: ["set -e -x mvn -f branch-master/AppDemo/pom.xml test cp branch-master/AppDemo/target/ mvn-output/"]
-
-run:
-  path: /bin/bash
-  args:
-  - -eux
-  - |
-    mkdir /home/mvn-output
-    cd home
-    ls home
-    #mvn -f "branch-master/AppDemo/pom.xml" test
-    #cp -R branch-master/AppDemo/target/. mvn-output/
