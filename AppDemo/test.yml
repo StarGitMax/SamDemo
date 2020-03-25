@@ -12,5 +12,4 @@ outputs:
   - name: mvn-output
 
 run:
-  path: /bin/sh
-  args: [branch-master/AppDemo/output.sh branch-master]
+  path: branch-master/AppDemo/output.sh branch-master
