@@ -8,7 +8,6 @@ image_resource:
     
 inputs:
   - name: branch-master
-  - name: mvn-output
 outputs:
   - name: mvn-output
   
