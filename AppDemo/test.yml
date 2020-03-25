@@ -13,7 +13,7 @@ outputs:
   
 run:
   path: "mvn"
-  args: ["-e -X -f", "branch-master/AppDemo/pom.xml", "test"]
+  args: ["-f", "branch-master/AppDemo/pom.xml", "test"]
 
 #run:
 #  path: /bin/bash
