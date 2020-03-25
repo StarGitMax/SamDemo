@@ -24,6 +24,8 @@ run:
   args:
   - -eux
   - |
-    mkdir mvn-output
-    mvn -f branch-master/AppDemo/pom.xml test
-    cp -R branch-master/AppDemo/target/. mvn-output/
+    mkdir /home/mvn-output
+    cd home
+    ls home
+    #mvn -f "branch-master/AppDemo/pom.xml" test
+    #cp -R branch-master/AppDemo/target/. mvn-output/
