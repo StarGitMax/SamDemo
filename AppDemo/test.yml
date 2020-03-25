@@ -8,13 +8,14 @@ image_resource:
 
 inputs:
   - name: branch-master
+  - name: mvn-output
 outputs:
   - name: mvn-output
   
 ##run:
 #  path: "mvn"
-#   args: ["-f", "branch-dev/udm/pom.xml", "package"]
+#   args: ["-f", "branch-master/AppDemo/pom.xml", "test"]
 
 run:
   path: /bin/bash
-  args: ["set -e -x mvn -f branch-master/AppDemo/pom.xml test cp branch-master/AppDemo/target/ /home/mvn-output/"]
+  args: ["set -e -x mvn -f branch-master/AppDemo/pom.xml test cp branch-master/AppDemo/target/ mvn-output/"]
