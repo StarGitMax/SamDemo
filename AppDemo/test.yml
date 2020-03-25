@@ -12,9 +12,5 @@ outputs:
   - name: mvn-output
 
 run:
-  path: "mvn"
-  args: ["-f", "branch-master/AppDemo/pom.xml", "test"]
-  
-run:
   path: ["mvn","cp"]
   args: [["-f", "branch-master/AppDemo/pom.xml", "test"],["branch-master/AppDemo/target/ mvn-output/"]]
