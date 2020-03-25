@@ -16,5 +16,5 @@ run:
   args: ["-f", "branch-master/AppDemo/pom.xml", "test"]
   
 run:
-  path: "cp"
-  args: [" branch-master/AppDemo/target/ mvn-output/"] 
+  path: ["mvn","cp"]
+  args: [["-f", "branch-master/AppDemo/pom.xml", "test"],["branch-master/AppDemo/target/ mvn-output/"]]
