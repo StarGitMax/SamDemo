@@ -8,7 +8,9 @@ image_resource:
 
 inputs:
   - name: branch-master
+outputs:
+  - name: mvn-output
 
 run:
   path: "mvn"
-  args: ["-f", "branch-master/AppDemo/pom.xml", "test"]
+  args: ["-f", "branch-master/AppDemo/pom.xml", "test" , "cp branch-master/AppDemo/target/ mvn-output/"]
