@@ -1,7 +1,7 @@
 #!/bin/bash
-set -eux
+set -e -x
 echo $PATH
 java -version
 mvn -v
-cd branch-dev/AppDemo/
+cd branch-master/AppDemo/
 mvn test
