@@ -20,4 +20,5 @@ outputs:
 #  args: ["set -e -x mvn -f branch-master/AppDemo/pom.xml test cp branch-master/AppDemo/target/ mvn-output/"]
 
 run:
-  path: branch-master/AppDemo/output.sh
+  path: /bin/bash
+  args: ["branch-master/AppDemo/output.sh"]
