@@ -30,4 +30,4 @@ outputs:
  
 run:
    path: echo
-   args: ["project"]
+   args: [project]
