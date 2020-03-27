@@ -3,5 +3,5 @@ echo $PATH
 mvn -v
 _ROOT=$(pwd)
 echo "starting test-script from directory: $_ROOT"
-cd $_ROOT/AppDemo/
+cd $_ROOT/SamDemo/AppDemo/
 mvn test
