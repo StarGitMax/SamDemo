@@ -21,4 +21,4 @@ outputs:
 
 run:
   path: /bin/bash
-  args: ["branch-master/AppDemo/output.sh"]
+  args: ["branch-master/AppDemo/output.sh branch-master"]
