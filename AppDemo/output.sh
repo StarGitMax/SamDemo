@@ -1,8 +1,9 @@
 #!/bin/bash
+pwd
 _ROOT=$(pwd)
 echo $PATH
 mvn -v
-echo "starting test-script from directory:" $1
-ls /tmp/build/
+echo "starting test-script from directory: $_ROOT"
+#ls /tmp/build/
 #cd _ROOT/AppDemo/
 #mvn test
