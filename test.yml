@@ -13,17 +13,21 @@ outputs:
   
 #run:
 #  path: "mvn"
-#  args: ["-e","-X","-f", "branch-master/AppDemo/pom.xml", "test"]
+#  args: ["-e","-X","-f", "project/AppDemo/pom.xml", "test"]
 
 #run:
 #  path: /bin/bash
-#  args: ["set -e -x mvn -f branch-master/AppDemo/pom.xml test cp branch-master/AppDemo/target/ mvn-output/"]
+#  args: ["set -e -x mvn -f project/AppDemo/pom.xml test cp project/AppDemo/target/ mvn-output/"]
 
-run:
-   path: /bin/bash
-   args: ["project/test-script.sh"]
+#run:
+#   path: /bin/bash
+#   args: ["project/test-script.sh"]
 
 #run:
 #  path: /bin/bash
  # args: 
- #   - branch-master/AppDemo/output.sh "branch-master"
+ #   - project/output.sh "branch-master"
+ 
+run:
+   path: echo
+   args: ["project"]
