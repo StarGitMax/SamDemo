@@ -1,0 +1,16 @@
+resources:
+- name: project
+  type: git
+  source:
+    uri: https://github.com/StarGitMax/SamDemo.git
+    branch: master
+
+jobs: 
+- name: MavenJob
+  serial: true
+  plan:
+  - get: project
+    trigger: true
+  - task: mvn-test
+    privileged: true
+    file: project/test.yml
