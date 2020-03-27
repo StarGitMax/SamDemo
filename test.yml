@@ -21,7 +21,7 @@ outputs:
 
 run:
    path: /bin/bash
-   args: ["branch-master/test-script.sh"]
+   args: ["project/test-script.sh"]
 
 #run:
 #  path: /bin/bash
