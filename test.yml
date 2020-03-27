@@ -19,15 +19,11 @@ outputs:
 #  path: /bin/bash
 #  args: ["set -e -x mvn -f project/AppDemo/pom.xml test cp project/AppDemo/target/ mvn-output/"]
 
-#run:
-#   path: /bin/bash
-#   args: ["project/test-script.sh"]
+run:
+   path: /bin/sh
+   args: ["project/test-script.sh -c project"]
 
 #run:
 #  path: /bin/bash
  # args: 
  #   - project/output.sh "branch-master"
- 
-run:
-   path: echo
-   args: [$project]
