@@ -21,7 +21,7 @@ outputs:
 
 run:
    path: /bin/sh
-   args: ["project/test-script.sh -c project"]
+   args: ["project/test-script.sh"]
 
 #run:
 #  path: /bin/bash
