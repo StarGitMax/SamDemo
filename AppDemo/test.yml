@@ -19,11 +19,11 @@ outputs:
 #  path: /bin/bash
 #  args: ["set -e -x mvn -f branch-master/AppDemo/pom.xml test cp branch-master/AppDemo/target/ mvn-output/"]
 
+run:
+   path: /bin/bash
+   args: ["branch-master/AppDemo/output.sh"]
+
 #run:
 #  path: /bin/bash
-#  args: ["branch-master/AppDemo/output.sh", "branch-master"]
-
-run:
-  path: /bin/bash
-  args: 
-    - branch-master/AppDemo/output.sh "branch-master"
+ # args: 
+ #   - branch-master/AppDemo/output.sh "branch-master"
