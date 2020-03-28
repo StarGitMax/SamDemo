@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class AppTest
 {
 
-	 String pwd = System.getProperty("browser");
+	 String pwd = System.getProperty("pwd");
 	
    @Test
     public void testApp()
