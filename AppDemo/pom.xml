@@ -53,6 +53,9 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile> 
 					</suiteXmlFiles>
+					<systemPropertyVariables>
+					    <pwd>${pwd}</pwd>
+					</systemPropertyVariables>
 				</configuration>
 	     </plugin>
 	   </plugins>
