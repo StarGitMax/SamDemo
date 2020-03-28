@@ -3,12 +3,15 @@ echo $PATH
 mvn -v
 _ROOT=$(pwd)
 echo "starting test-script from directory: $_ROOT"
-echo $1
+mkdir mvn-output
+echo "Input Argument: $1"
 cd $_ROOT/$1/AppDemo/
 mvn test
 _ROOT1=$(pwd)
 echo "ending test-script from directory: $_ROOT1"
-cp -R $_ROOT1/target/* mvn-output/
+echo "Source directory: $_ROOT1/target/"
+echo "Target directory: $_ROOT/mvn-output/"
+cp -R $_ROOT1/target/* $_ROOT/mvn-output/
 echo "Hi, I'm sleeping for 2 minutes..."
 sleep 2m
 echo "all Done."
