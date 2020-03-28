@@ -3,7 +3,6 @@ echo $PATH
 mvn -v
 _ROOT=$(pwd)
 echo "starting test-script from directory: $_ROOT"
-mkdir mvn-output
 echo "Input Argument: $1"
 cd $_ROOT/$1/AppDemo/
 mvn test
