@@ -1,5 +1,6 @@
 #!/bin/bash
 echo $PATH
+echo ${HOME}
 mvn -v
 _ROOT=$(pwd)
 echo "starting test-script from directory: $_ROOT"
