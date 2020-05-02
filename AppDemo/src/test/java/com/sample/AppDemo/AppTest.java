@@ -1,18 +1,11 @@
 package com.sample.AppDemo;
 
-import java.awt.Robot;
-import java.io.File;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
-
-import com.sun.glass.events.KeyEvent;
 
 /**
  * Unit test for simple App.
