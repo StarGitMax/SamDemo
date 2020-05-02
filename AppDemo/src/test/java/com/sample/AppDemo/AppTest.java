@@ -42,9 +42,11 @@ public class AppTest
 			System.out.println("Your OS is not support!!");
 		}
 	   ChromeOptions options = new ChromeOptions();
+	   options.addArguments("--headless");
 	   options.addArguments("--no-sandbox");
        options.addArguments("--disable-dev-shm-usage");
        options.setExperimentalOption("useAutomationExtension", false);
+       options.addArguments("--window-size=1920x1080");
 		driver=new ChromeDriver(options);
 		driver.get("https://www.google.com");
 		Thread.sleep(10000);
