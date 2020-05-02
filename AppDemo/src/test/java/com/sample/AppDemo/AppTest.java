@@ -1,12 +1,18 @@
 package com.sample.AppDemo;
 
+import java.awt.Robot;
 import java.io.File;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
+
+import com.sun.glass.events.KeyEvent;
 
 /**
  * Unit test for simple App.
@@ -46,11 +52,14 @@ public class AppTest
 	   options.addArguments("--no-sandbox");
        options.addArguments("--disable-dev-shm-usage");
        options.setExperimentalOption("useAutomationExtension", false);
-       options.addArguments("--window-size=1920x1080");
+       options.addArguments("start-maximized");
 		driver=new ChromeDriver(options);
 		driver.get("https://www.google.com");
 		Thread.sleep(10000);
 		System.out.println("Title "+driver.getTitle());
+		driver.findElement(By.name("q")).sendKeys("Testing"+Keys.ENTER);
+		 Thread.sleep(5000);
+		 System.out.println("Title "+driver.getTitle());
          driver.close();
          driver.quit();
     }
