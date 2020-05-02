@@ -33,7 +33,8 @@ public class AppTest
 		} else if (isUnix()) {
 			System.out.println("This is Unix or Linux");
 			  //System.setProperty("webdriver.chrome.driver", sPath+"//Drivers//chromedriver");
-			 System.setProperty("webdriver.chrome.driver", ClassLoader.getSystemResource("Drivers/chromedriver").getPath());
+			  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+			 //System.setProperty("webdriver.chrome.driver", ClassLoader.getSystemResource("Drivers/chromedriver").getPath());
 		} else if (isSolaris()) {
 			System.out.println("This is Solaris");
 		} else {
