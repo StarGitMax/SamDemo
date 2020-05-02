@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
@@ -40,8 +41,10 @@ public class AppTest
 		} else {
 			System.out.println("Your OS is not support!!");
 		}
-	 //  DesiredCapabilities dc = DesiredCapabilities.chrome();
-		driver=new ChromeDriver();
+	   ChromeOptions options = new ChromeOptions();
+	   options.addArguments("--no-sandbox");
+       options.addArguments("--disable-dev-shm-usage");
+		driver=new ChromeDriver(options);
 		driver.get("https://www.google.com");
 		Thread.sleep(10000);
 		System.out.println("Title "+driver.getTitle());
