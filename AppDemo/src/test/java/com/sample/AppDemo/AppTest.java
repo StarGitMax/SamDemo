@@ -2,6 +2,7 @@ package com.sample.AppDemo;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
 /**
@@ -28,12 +29,13 @@ public class AppTest
 			System.out.println("This is Mac");
 		} else if (isUnix()) {
 			System.out.println("This is Unix or Linux");
-			  System.setProperty("webdriver.chrome.driver", sPath+"\\Drivers\\chromedriver");
+			  System.setProperty("webdriver.chrome.driver", sPath+"//Drivers//chromedriver");
 		} else if (isSolaris()) {
 			System.out.println("This is Solaris");
 		} else {
 			System.out.println("Your OS is not support!!");
 		}
+	   DesiredCapabilities dc = DesiredCapabilities.chrome();
 		driver=new ChromeDriver();
 		driver.get("https://www.google.com");
 		Thread.sleep(10000);
