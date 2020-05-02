@@ -40,7 +40,7 @@ public class AppTest
 		} else {
 			System.out.println("Your OS is not support!!");
 		}
-	   DesiredCapabilities dc = DesiredCapabilities.chrome();
+	 //  DesiredCapabilities dc = DesiredCapabilities.chrome();
 		driver=new ChromeDriver();
 		driver.get("https://www.google.com");
 		Thread.sleep(10000);
