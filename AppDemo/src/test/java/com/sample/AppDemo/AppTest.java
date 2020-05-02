@@ -44,6 +44,7 @@ public class AppTest
 	   ChromeOptions options = new ChromeOptions();
 	   options.addArguments("--no-sandbox");
        options.addArguments("--disable-dev-shm-usage");
+       options.setExperimentalOption("useAutomationExtension", false);
 		driver=new ChromeDriver(options);
 		driver.get("https://www.google.com");
 		Thread.sleep(10000);
