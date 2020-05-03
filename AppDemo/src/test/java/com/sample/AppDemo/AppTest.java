@@ -47,7 +47,7 @@ public class AppTest
 			System.out.println("Your OS is not support!!");
 		}
 	   ChromeOptions options = new ChromeOptions();
-	   //options.addArguments("--headless");
+	   options.addArguments("--headless");
 	   options.addArguments("--no-sandbox");
        options.addArguments("--disable-dev-shm-usage");
        options.addArguments("--disable-gpu");
