@@ -1,7 +1,12 @@
 package com.sample.AppDemo;
 
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,6 +27,7 @@ public class AppTest
     public void testApp() throws Exception
     {
 	   System.out.println("Osname "+OS);
+	   System.out.println("sPath "+sPath);
 	   System.out.println("This is for Testing Ouput in Concource Console Using Maven");
        System.out.println("Project Working Dirctory: "+pwd);
 	   if (isWindows()) {
@@ -41,18 +47,41 @@ public class AppTest
 			System.out.println("Your OS is not support!!");
 		}
 	   ChromeOptions options = new ChromeOptions();
-	   options.addArguments("--headless");
+	   //options.addArguments("--headless");
 	   options.addArguments("--no-sandbox");
        options.addArguments("--disable-dev-shm-usage");
+       options.addArguments("--disable-gpu");
        options.setExperimentalOption("useAutomationExtension", false);
        options.addArguments("start-maximized");
+       options.addArguments("--window-size=1920,1200");
 		driver=new ChromeDriver(options);
-		driver.get("https://www.google.com");
+		driver.get("https://news.ycombinator.com/login?goto=new");
 		Thread.sleep(10000);
 		System.out.println("Title "+driver.getTitle());
-		driver.findElement(By.name("q")).sendKeys("Testing"+Keys.ENTER);
+		/*driver.findElement(By.name("q")).sendKeys("Testing"+Keys.ENTER);
 		 Thread.sleep(5000);
-		 System.out.println("Title "+driver.getTitle());
+		 System.out.println("Title "+driver.getTitle());*/
+		
+		driver.findElement(By.xpath("//input[@name='acct']")).sendKeys("userName");
+	    driver.findElement(By.xpath("//input[@type='password']")).sendKeys("password");
+	    driver.findElement(By.xpath("//input[@value='login']")).click();
+	    Thread.sleep(10000);
+	      
+	    if(driver.getCurrentUrl().equals("https://news.ycombinator.com/login")){
+	       	System.out.println("Incorrect credentials");
+	       	//driver.quit();
+	       	//System.exit(1);
+	      }else{
+	       	System.out.println("Successfuly logged in");
+	        // Logout
+	        driver.findElement(By.id("logout")).click();
+	      }
+	    
+	    
+	 // Take a screenshot of the current page
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(screenshot, new File( sPath+"/target/screenshot.png"));
+        
          driver.close();
          driver.quit();
     }
